@@ -10,7 +10,7 @@ class ModelTests(TestCase):
 
     def test_create_user_with_email_successful(self):
         """Test creating a user with an email is successful."""
-        email = 'test@example.com'
+        email = 'test@samsung.com'
         password = 'testpass123'
         user = get_user_model().objects.create_user(
             email=email,
@@ -22,10 +22,10 @@ class ModelTests(TestCase):
     def test_new_user_email_normalized(self):
         """Test email is normalized for new users."""
         sample_emails = [
-            ['test1@EXAMPLE.com', 'test1@example.com'],
-            ['Test2@Example.com', 'Test2@example.com'],
-            ['TEST3@EXAMPLE.com', 'TEST3@example.com'],
-            ['test4@example.COM', 'test4@example.com']
+            ['test1@SAMSUNG.com', 'test1@samsung.com'],
+            ['Test2@Samsung.com', 'Test2@samsung.com'],
+            ['TEST3@SAMSUNG.com', 'TEST3@samsung.com'],
+            ['test4@samsung.COM', 'test4@samsung.com']
         ]
         for email, expected in sample_emails:
             user = get_user_model().objects.create_user(email, 'sample123')
@@ -36,10 +36,15 @@ class ModelTests(TestCase):
         with self.assertRaises(ValueError):
             get_user_model().objects.create_user('', 'test123')
 
+    def test_new_user_email_not_samsung_raises_error(self):
+        """Test that user email is not samsung raises a ValueError."""
+        with self.assertRaises(ValueError):
+            get_user_model().objects.create_user('test@example.com', 'test123')
+
     def test_create_superuser(self):
         """Test creating a superuser."""
         user = get_user_model().objects.create_superuser(
-            'test@example.com',
+            'test@samsung.com',
             'test123'
         )
 
