@@ -16,14 +16,28 @@ docker-compose version 1.29.2, build 5becea4c
 
 ---
 ## 개발 환경에서 app 실행 방법
-### 1. docker build
+### 1. git clone
+```bash
+❯ git clone https://github.com/toughhyeok/nimbus2022.git
+Cloning into 'nimbus2022'...
+remote: Enumerating objects: 126, done.
+remote: Counting objects: 100% (126/126), done.
+remote: Compressing objects: 100% (90/90), done.
+remote: Total 126 (delta 60), reused 89 (delta 28), pack-reused 0
+Receiving objects: 100% (126/126), 19.74 KiB | 2.82 MiB/s, done.
+Resolving deltas: 100% (60/60), done.
+```
+
+<br>
+
+### 2. docker build
 ```bash
 ❯ docker-compose build
 ```
 
 <br>
 
-### 2. docker-compose up
+### 3. docker-compose up
 ```bash
 ❯ docker-compose up
 ```
@@ -45,12 +59,12 @@ app_1  | Quit the server with CONTROL-C.
 
 <br>
 
-### 3. 웹 브라우저에서 http://localhost:8000/ 접속
+### 4. 웹 브라우저에서 http://localhost:8000/ 접속
 <img width="536" alt="image" src="https://user-images.githubusercontent.com/88708976/179977048-b6eb00a8-900b-4ae0-9caf-46c18e59ec27.png">
 
 <br>
 
-### 4. Swagger 접속 (api docs)
+### 5. Swagger 접속 (api docs)
 [http://localhost:8000/api/docs/](http://localhost:8000/api/docs)
 
 <br>
@@ -60,9 +74,9 @@ app_1  | Quit the server with CONTROL-C.
 
 <br>
 
-### 5. api test
+### 6. api test
 
-### 6. admin 페이지 접속
+### 7. admin 페이지 접속
 [http://localhost:8000/admin/](http://localhost:8000/admin/)
 
 관리자 계정은 카톡으로 물어보시면 됩니당
